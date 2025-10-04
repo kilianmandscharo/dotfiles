@@ -26,7 +26,7 @@ return {
                     lualine_a = { 'mode' },
                     lualine_b = { 'branch', 'diagnostics' },
                     lualine_c = { { 'filename', path = 2 } },
-                    lualine_x = { 'searchcount' },
+                    lualine_x = {},
                     lualine_y = { 'filetype' },
                     lualine_z = { { 'location', padding = { left = 0, right = 1 } } }
                 },
