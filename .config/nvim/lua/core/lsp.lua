@@ -3,6 +3,7 @@ vim.lsp.enable({
     "zls",
     "ts_ls",
     "gopls",
+    "pyright",
 })
 
 vim.diagnostic.config({
