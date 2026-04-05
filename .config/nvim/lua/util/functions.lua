@@ -1,72 +1,12 @@
 local M = {}
 
-local getJestCommand = function()
-    local line = vim.api.nvim_get_current_line()
-
-    local test_name = line:match("describe%(\"(.-)\"") or line:match("it%(\"(.-)\"")
-    if not test_name then
-        return nil
-    end
-
-    local file_path = vim.fn.expand("%:p")
-    local cmd = string.format("npx jest \"%s\" -t \"%s\"", file_path, test_name)
-
-    return cmd
-end
-
-local getGoTestCommand = function()
-    local line = vim.api.nvim_get_current_line()
-
-    local test_name = line:match("func (.+)%(")
-    if not test_name then
-        return nil
-    end
-
-    local cmd = string.format("go test -run %s ./...", test_name)
-
-    return cmd
-end
-
-M.runTest = function()
-    local file_name = vim.fn.expand("%:t")
-    local cmd = nil
-
-    if
-        file_name:match(".test.ts") or
-        file_name:match(".test.js") or
-        file_name:match(".spec.ts") or
-        file_name:match(".spec.js")
-    then
-        cmd = getJestCommand()
-    end
-
-    if file_name:match("_test.go") then
-        cmd = getGoTestCommand()
-    end
-
-    if not cmd then
-        return
-    end
-
-    vim.cmd("vsplit | terminal")
-    vim.fn.chansend(vim.b.terminal_job_id, cmd .. "\n")
-end
-
-local use_conform_formatter = {
-    python = true,
-    javascript = true,
-    typescript = true,
-    json = true,
-    javascriptreact = true,
-    typescriptreact = true,
-}
-
 M.formatFile = function()
-    local filetype = vim.bo.filetype
-    if use_conform_formatter[filetype] then
+    local bufnr = vim.api.nvim_get_current_buf()
+
+    if #require("conform").list_formatters(bufnr) > 0 then
         require("conform").format({
-            bufnr = vim.api.nvim_get_current_buf(),
-            lsp_fallback = true,
+            bufnr = bufnr,
+            lsp_format = "fallback",
             async = false,
         })
     else

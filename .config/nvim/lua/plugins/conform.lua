@@ -10,6 +10,8 @@ return {
                     typescript = { "prettier" },
                     typescriptreact = { "prettier" },
                     json = { "prettier" },
+                    html = { "prettier" },
+                    css = { "prettier" },
                 },
             })
         end
