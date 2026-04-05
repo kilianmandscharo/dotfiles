@@ -11,6 +11,14 @@ return {
         config = function()
             local actions = require "telescope.actions"
 
+            vim.keymap.set("n", "<leader><leader>g", function()
+                vim.ui.input({ prompt = "File pattern (e.g. *.ts): " }, function(pattern)
+                    require("telescope.builtin").live_grep({
+                        glob_pattern = pattern ~= "" and pattern or nil,
+                    })
+                end)
+            end)
+
             require('telescope').setup {
                 pickers = {
                     find_files = {
