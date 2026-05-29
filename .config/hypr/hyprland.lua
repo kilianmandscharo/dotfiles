@@ -30,7 +30,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "ghostty"
-local fileManager = "dolphin"
+local fileManager = "thunar"
 
 -------------------
 ---- AUTOSTART ----
