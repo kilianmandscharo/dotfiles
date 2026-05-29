@@ -30,8 +30,6 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "ghostty"
 local fileManager = "dolphin"
-local menu        = "wofi"
-
 
 -------------------
 ---- AUTOSTART ----
@@ -43,8 +41,7 @@ local menu        = "wofi"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd(terminal)
-    hl.exec_cmd("hyprpaper & mako & waybar")
+    hl.exec_cmd("qs -c noctalia-shell")
 end)
 
 
@@ -85,7 +82,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.config({
     general = {
         gaps_in          = 5,
-        gaps_out         = 8,
+        gaps_out         = 10,
 
         border_size      = 2,
 
@@ -104,7 +101,7 @@ hl.config({
     },
 
     decoration = {
-        rounding         = 10,
+        rounding         = 20,
         rounding_power   = 2,
 
         -- Change transparency of focused and unfocused windows
@@ -121,7 +118,7 @@ hl.config({
         blur             = {
             enabled  = true,
             size     = 3,
-            passes   = 1,
+            passes   = 2,
             vibrancy = 0.1696,
         },
     },
@@ -250,6 +247,8 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
+local ipc = "qs -c noctalia-shell ipc call"
+
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
@@ -260,7 +259,7 @@ hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
