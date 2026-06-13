@@ -13,7 +13,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.autoread = true
 vim.opt.colorcolumn = "100"
 vim.opt.laststatus = 3
-
+vim.opt.termguicolors = true
 vim.opt.clipboard:append("unnamedplus")
 
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.g.mapleader = " "
+
+vim.cmd.colorscheme("catppuccin")
