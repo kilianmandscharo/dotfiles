@@ -11,11 +11,12 @@ require('telescope').setup({
             theme = "ivy",
         },
     },
-    file_ignore_patterns = {
-        "node_modules",
-        "*templ.go*",
-    },
     defaults = {
+        file_ignore_patterns = {
+            "node_modules",
+            "templ%.go",
+            "%.d%.ts$",
+        },
         mappings = {
             i = {
                 ["<Tab>"] = actions.toggle_selection + actions.move_selection_next,

@@ -5,4 +5,5 @@ vim.pack.add({
 require("colorizer").setup({
     "css",
     "html",
+    "less",
 })

@@ -17,4 +17,11 @@ cmp.setup({
     },
     signature = { enabled = true },
     completion = { ghost_text = { enabled = true } },
+    cmdline = {
+      completion = {
+        menu = {
+          auto_show = false,
+        },
+      },
+    },
 })

@@ -61,6 +61,18 @@ set("n", "<leader>h", ":Telescope help_tags<CR>")
 set("n", "<leader>g", ":Telescope live_grep<CR>")
 set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>")
 
+vim.keymap.set("v", "<leader><leader>g", function()
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg("v")
+  require("telescope.builtin").live_grep({ default_text = text })
+end)
+
+vim.keymap.set("v", "<leader><leader>p", function()
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg("v")
+  require("telescope.builtin").find_files({ default_text = text })
+end)
+
 -- Trouble
 set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
 set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
@@ -72,3 +84,6 @@ set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- Copilot
+vim.keymap.set("i", "<C-e>", "copilot#Accept('<CR>')", { expr = true, silent = true, replace_keycodes = false })
