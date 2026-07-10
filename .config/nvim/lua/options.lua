@@ -17,5 +17,3 @@ vim.opt.termguicolors = true
 vim.opt.clipboard:append("unnamedplus")
 
 vim.g.mapleader = " "
-
-vim.cmd.colorscheme("catppuccin")
