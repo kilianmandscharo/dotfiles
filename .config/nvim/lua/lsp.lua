@@ -1,9 +1,6 @@
 vim.lsp.enable({
     "lua_ls",
-    "zls",
     "ts_ls",
-    "gopls",
-    "pyright",
     "html",
     "css",
 })
