@@ -48,7 +48,7 @@ local fileManager = "thunar"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("qs -c noctalia-shell")
+  hl.exec_cmd("noctalia")
 end)
 
 
@@ -254,7 +254,7 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-local ipc = "qs -c noctalia-shell ipc call"
+local ipc = "noctalia msg "
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
@@ -266,8 +266,8 @@ hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
