@@ -1,15 +1,15 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "13e7b50e7ba73ce781459da68d346925adfdb530",
+      "rev": "2befba190e0ffa3692ab364f75604c9c2d248adf",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
-      "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
+      "rev": "c8fdc12c8a2fab6cf786dd7141a283f8079f902b",
       "src": "https://github.com/saghen/blink.lib"
     },
     "conform.nvim": {
-      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "copilot.vim": {
@@ -17,7 +17,7 @@
       "src": "https://github.com/github/copilot.vim"
     },
     "gitsigns.nvim": {
-      "rev": "25050e4ed39e628282831d4cbecb1850454ce915",
+      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "kanagawa.nvim": {
@@ -29,15 +29,15 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "nvim-autopairs": {
-      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
+      "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-colorizer.lua": {
-      "rev": "664c0b7cea1de71f8b65dfe951b7996fc3e6ccde",
+      "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-web-devicons": {
-      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+      "rev": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -49,7 +49,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "telescope.nvim": {
-      "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
+      "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "trouble.nvim": {
