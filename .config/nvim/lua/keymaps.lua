@@ -61,13 +61,13 @@ set("n", "<leader>h", ":Telescope help_tags<CR>")
 set("n", "<leader>g", ":Telescope live_grep<CR>")
 set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>")
 
-vim.keymap.set("v", "<leader><leader>g", function()
+set("v", "<leader><leader>g", function()
   vim.cmd('noau normal! "vy"')
   local text = vim.fn.getreg("v")
   require("telescope.builtin").live_grep({ default_text = text })
 end)
 
-vim.keymap.set("v", "<leader><leader>p", function()
+set("v", "<leader><leader>p", function()
   vim.cmd('noau normal! "vy"')
   local text = vim.fn.getreg("v")
   require("telescope.builtin").find_files({ default_text = text })
@@ -83,7 +83,13 @@ set("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location Lis
 set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 
 -- Oil
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Copilot
-vim.keymap.set("i", "<C-e>", "copilot#Accept('<CR>')", { expr = true, silent = true, replace_keycodes = false })
+set("i", "<C-e>", "copilot#Accept('<CR>')", { expr = true, silent = true, replace_keycodes = false })
+
+-- Multicursor
+set("n", "<C-q>", function()
+  local ns = vim.api.nvim_create_namespace("nvim.multicursor")
+  vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
+end)
