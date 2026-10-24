@@ -6,10 +6,10 @@ require("nvim-treesitter").setup({
     install_dir = vim.fn.stdpath("data") .. "/site",
 })
 
-require("nvim-treesitter").install({ "svelte", "typescript", "javascript", "css", "html" })
+require("nvim-treesitter").install({ "svelte", "typescript", "javascript", "css", "html", "go" })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "svelte", "typescript", "javascript", "css", "html" },
+    pattern = { "svelte", "typescript", "javascript", "css", "html", "go" },
     callback = function()
         vim.treesitter.start()
     end,

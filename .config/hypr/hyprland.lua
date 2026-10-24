@@ -17,10 +17,10 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
+    output = "DP-3",
+    mode = "3840x2160@60.00000",
+    position = "0x0",
+    scale = "1",
 })
 
 ---------------------
@@ -41,7 +41,7 @@ local fileManager = "thunar"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
-  hl.exec_cmd("noctalia")
+    hl.exec_cmd("noctalia")
 end)
 
 
